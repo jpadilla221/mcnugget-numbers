@@ -14,4 +14,15 @@ class FrobeniusTest {
     assertEquals(expected, Frobenius.isMcNugget(value));
   }
 
+  class GeneralMcNuggetTest {
+
+    int[] inputArray = {20, 9, 6};
+    int value = 29;
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "general-mcnugget-data.csv")
+    void isGeneralMcNugget(int value, int[] packSizes) {
+      assertEquals(false, Frobenius.isGeneralMcNugget(value, inputArray));
+    }
+  }
 }
